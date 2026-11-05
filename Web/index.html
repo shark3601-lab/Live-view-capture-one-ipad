@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Live View">
+<meta name="theme-color" content="#000000">
+<link rel="manifest" href="manifest.webmanifest">
+<title>Live View</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #000; color: #fff; overflow: hidden;
+    touch-action: none; -webkit-user-select: none; user-select: none;
+    -webkit-tap-highlight-color: transparent; font: 15px -apple-system, system-ui, sans-serif; }
+  canvas { position: absolute; left: 0; top: 0; }
+  #hud { position: absolute; top: calc(env(safe-area-inset-top) + 8px); right: calc(env(safe-area-inset-right) + 8px);
+    background: rgba(0,0,0,.6); color: #ddd; padding: 6px 10px; border-radius: 8px;
+    font: 12px ui-monospace, Menlo, monospace; white-space: pre; pointer-events: none; }
+  #msg { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    padding: 24px; text-align: center; pointer-events: none; }
+  #msg > div { background: rgba(28,28,30,.9); padding: 16px 22px; border-radius: 12px; max-width: 520px; line-height: 1.45; }
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+<canvas id="view"></canvas>
+<div id="hud" class="hidden"></div>
+<div id="msg"><div id="msgText">Connessione al Mac…</div></div>
+<script src="app.js"></script>
+</body>
+</html>
